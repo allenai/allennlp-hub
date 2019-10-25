@@ -28,5 +28,6 @@ RUN pip install --editable allennlp
 # Specifically, by placing allennlp last.
 ENV EXCLUDE_ALLENNLP_IN_SETUP true
 RUN pip install --editable allennlp-semparse
+RUN pip install --editable allennlp-hub
 
 CMD ["/bin/bash"]
