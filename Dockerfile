@@ -27,6 +27,6 @@ RUN pip install --editable allennlp
 # TODO(brendanr): Could we avoid this by carefully ordering our installs here?
 # Specifically, by placing allennlp last.
 ENV EXCLUDE_ALLENNLP_IN_SETUP true
-RUN pip install --editable allennlp_semparse
+RUN pip install --editable allennlp-semparse
 
 CMD ["/bin/bash"]
