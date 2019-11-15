@@ -34,10 +34,16 @@ if not os.environ.get("EXCLUDE_ALLENNLP_IN_SETUP"):
     #
     # As a mitigation, run `pip uninstall allennlp` before installing this
     # package.
-    # TODO(brendanr): Make these point to released versions.
+    #
+    # TODO(brendanr): Make these point to released versions. Currently
+    # allennlp-semparse is unreleased and it depends on a specific allennlp
+    # SHA. Due to the aforementioned setuptools bug, we explicitly set the
+    # allennlp version here to be that required by allennlp-semparse.
+    allennlp_sha = "93024e53c1445cb4630ee5c07926abff8943715f"
+    semparse_sha = "937d5945488a33c61d0047bd74d8106e60340bbd"
     install_requirements = [
-        "allennlp @ git+ssh://git@github.com/allenai/allennlp@master#egg=allennlp",
-        "allennlp @ git+ssh://git@github.com/allenai/allennlp-semparse@master#egg=allennlp-semparse"
+        f"allennlp @ git+ssh://git@github.com/allenai/allennlp@{allennlp_sha}#egg=allennlp",
+        f"allennlp_semparse @ git+ssh://git@github.com/allenai/allennlp-semparse@{semparse_sha}#egg=allennlp-semparse",
     ]
 
 # make pytest-runner a conditional requirement,

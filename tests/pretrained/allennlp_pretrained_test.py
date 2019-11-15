@@ -5,9 +5,7 @@ from allennlp.common.testing import AllenNlpTestCase
 from allennlp_hub import pretrained
 
 
-class SniffTest(AllenNlpTestCase):
-    # TODO: Add semparse sniff tests. Were there ever any?
-
+class AllenNlpPretrainedTest(AllenNlpTestCase):
     def test_machine_comprehension(self):
         predictor = pretrained.bidirectional_attention_flow_seo_2017()
 
@@ -16,9 +14,7 @@ class SniffTest(AllenNlpTestCase):
 
         result = predictor.predict_json({"passage": passage, "question": question})
 
-        correct = (
-            "Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Hugo Weaving, and Joe Pantoliano"
-        )
+        correct = "Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Hugo Weaving, and Joe Pantoliano"
 
         assert correct == result["best_span_str"]
 
@@ -362,7 +358,9 @@ class SniffTest(AllenNlpTestCase):
         ]
         assert result["tags"] == ["B-PER", "L-PER", "O", "O", "O", "O", "U-LOC", "O"]
 
-    @pytest.mark.skipif(spacy.__version__ < "2.1", reason="this model changed from 2.0 to 2.1")
+    @pytest.mark.skipif(
+        spacy.__version__ < "2.1", reason="this model changed from 2.0 to 2.1"
+    )
     def test_constituency_parsing(self):
         predictor = pretrained.span_based_constituency_parsing_with_elmo_joshi_2018()
 
