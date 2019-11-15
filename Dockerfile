@@ -1,3 +1,13 @@
+# Docker image for checking integration across the main repo (allennlp) and
+# sub-repos with every master commit.  This provides early warning when the
+# current masters of some combination of allennlp, allennlp-hub and the
+# sub-repos are incompatible.
+#
+# We expect that the various repos are checked out under a directory matching
+# their name, e.g. allennlp-semparse. A TeamCity build can be configured to do
+# this by adding the checkout rule "+:.=>allennlp-semparse". These are found
+# under "Version Control Settings" -> "VCS Roots" -> "Edit checkout rules".
+
 FROM python:3.7.2
 
 # Setup a spot for the code

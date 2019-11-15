@@ -1,0 +1,24 @@
+# Docker image for checking integration across the versions of the main package
+# (allennlp) and sub-packages as specified in requirements.txt/setup.py. This
+# ensures that the allennlp_hub package, were it to be released now, would
+# function correctly.
+
+FROM python:3.7.2
+
+# Setup a spot for the code
+WORKDIR /stage
+
+# Copy requirements file first so we can install them and get better caching
+# from Docker.
+COPY requirements.txt requirements.txt
+
+RUN pip install -r requirements.txt
+
+# Copy remaining files and install package.
+COPY README.md README.md
+COPY allennlp_hub allennlp_hub
+COPY setup.py setup.py
+COPY tests tests
+RUN pip install --editable .
+
+CMD ["/bin/bash"]

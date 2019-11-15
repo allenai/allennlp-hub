@@ -1,0 +1,3 @@
+# To be changed to released versions once allennlp-semparse unpins allennlp.
+git+git://github.com/allenai/allennlp@93024e53c1445cb4630ee5c07926abff8943715f
+git+git://github.com/allenai/allennlp-semparse@937d5945488a33c61d0047bd74d8106e60340bbd

@@ -22,7 +22,6 @@ with open("allennlp_hub/version.py") as version_file:
     exec(version_file.read(), VERSION)
 
 install_requirements = []
-# TODO(brendanr): Clean this up. Use a requirements.txt?
 if not os.environ.get("EXCLUDE_ALLENNLP_IN_SETUP"):
     # Warning: This will not give you the desired version if you've already
     # installed allennlp! See https://github.com/pypa/pip/issues/5898.
@@ -35,10 +34,11 @@ if not os.environ.get("EXCLUDE_ALLENNLP_IN_SETUP"):
     # As a mitigation, run `pip uninstall allennlp` before installing this
     # package.
     #
-    # TODO(brendanr): Make these point to released versions. Currently
-    # allennlp-semparse is unreleased and it depends on a specific allennlp
-    # SHA. Due to the aforementioned setuptools bug, we explicitly set the
-    # allennlp version here to be that required by allennlp-semparse.
+    # TODO(brendanr): Make these point to released versions, when possible, by
+    # loading requirements.txt. Currently allennlp-semparse is unreleased and
+    # it depends on a specific allennlp SHA. Due to the aforementioned
+    # setuptools bug, we explicitly set the allennlp version here to be that
+    # required by allennlp-semparse.
     allennlp_sha = "93024e53c1445cb4630ee5c07926abff8943715f"
     semparse_sha = "937d5945488a33c61d0047bd74d8106e60340bbd"
     install_requirements = [
