@@ -78,33 +78,6 @@ class AllenNlpPretrainedTest(AllenNlpTestCase):
                 ],
             },
             {
-                "verb": "were",
-                "description": "If you liked the music we [V: were] playing last night , you will absolutely love what we 're playing tomorrow !",
-                "tags": [
-                    "O",
-                    "O",
-                    "O",
-                    "O",
-                    "O",
-                    "O",
-                    "B-V",
-                    "O",
-                    "O",
-                    "O",
-                    "O",
-                    "O",
-                    "O",
-                    "O",
-                    "O",
-                    "O",
-                    "O",
-                    "O",
-                    "O",
-                    "O",
-                    "O",
-                ],
-            },
-            {
                 "verb": "playing",
                 "description": "If you liked [ARG1: the music] [ARG0: we] were [V: playing] [ARGM-TMP: last] night , you will absolutely love what we 're playing tomorrow !",
                 "tags": [
@@ -182,33 +155,6 @@ class AllenNlpPretrainedTest(AllenNlpTestCase):
                     "I-ARG1",
                     "I-ARG1",
                     "I-ARG1",
-                    "O",
-                ],
-            },
-            {
-                "verb": "'re",
-                "description": "If you liked the music we were playing last night , you will absolutely love what we [V: 're] playing tomorrow !",
-                "tags": [
-                    "O",
-                    "O",
-                    "O",
-                    "O",
-                    "O",
-                    "O",
-                    "O",
-                    "O",
-                    "O",
-                    "O",
-                    "O",
-                    "O",
-                    "O",
-                    "O",
-                    "O",
-                    "O",
-                    "O",
-                    "B-V",
-                    "O",
-                    "O",
                     "O",
                 ],
             },
@@ -382,7 +328,7 @@ class AllenNlpPretrainedTest(AllenNlpTestCase):
         ]
         assert (
             result["trees"]
-            == "(S (S (NP (NNP Pierre) (NNP Vinken)) (VP (VBD died) (NP (JJ aged) (CD 81)))) (: ;) (S (VP (VBN immortalised) (S (ADJP (VBN aged) (NP (CD 61)))))) (. .))"
+            == "(S (NP (NNP Pierre) (NNP Vinken)) (VP (VP (VBD died) (NP (JJ aged) (CD 81))) (, ;) (VP (VBN immortalised) (S (ADJP (JJ aged) (CD 61))))) (. .))"
         )
 
     def test_dependency_parsing(self):
