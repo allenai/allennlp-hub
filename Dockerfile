@@ -17,10 +17,12 @@ WORKDIR /stage
 # from Docker.
 RUN mkdir allennlp
 RUN mkdir allennlp-semparse
-COPY allennlp/requirements.txt allennlp/requirements.txt
+COPY allennlp/setup.py allennlp/setup.py
+COPY allennlp/README.md allennlp/README.md
+COPY allennlp/allennlp/version.py allennlp/allennlp/version.py
 COPY allennlp-semparse/requirements.txt allennlp-semparse/requirements.txt
 
-RUN pip install -r allennlp/requirements.txt
+RUN pip install -e allennlp/
 RUN pip install -r allennlp-semparse/requirements.txt
 
 # Copy remaining files
