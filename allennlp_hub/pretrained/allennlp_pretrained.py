@@ -1,4 +1,5 @@
 from allennlp import predictors
+from allennlp_rc import predictors as rc_predictors
 from allennlp_hub.pretrained.helpers import _load_predictor
 import allennlp.models
 
@@ -29,7 +30,7 @@ def bert_srl_shi_2019() -> predictors.SemanticRoleLabelerPredictor:
     return predictor
 
 
-def bidirectional_attention_flow_seo_2017() -> predictors.BidafPredictor:
+def bidirectional_attention_flow_seo_2017() -> rc_predictors.ReadingComprehensionPredictor:
     """
     Reading Comprehension
 
@@ -52,15 +53,15 @@ def bidirectional_attention_flow_seo_2017() -> predictors.BidafPredictor:
     """
     predictor = _load_predictor(
         "https://allennlp.s3.amazonaws.com/models/bidaf-model-2017.09.15-charpad.tar.gz",
-        "machine-comprehension",
+        "reading-comprehension",
     )
     return predictor
 
 
-def naqanet_dua_2019() -> predictors.BidafPredictor:
+def naqanet_dua_2019() -> rc_predictors.ReadingComprehensionPredictor:
     predictor = _load_predictor(
         "https://allennlp.s3.amazonaws.com/models/naqanet-2019.04.29-fixed-weight-names.tar.gz",
-        "machine-comprehension",
+        "reading-comprehension",
     )
     return predictor
 

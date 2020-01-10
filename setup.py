@@ -39,11 +39,13 @@ if not os.environ.get("EXCLUDE_ALLENNLP_IN_SETUP"):
     # it depends on a specific allennlp SHA. Due to the aforementioned
     # setuptools bug, we explicitly set the allennlp version here to be that
     # required by allennlp-semparse.
-    allennlp_sha = "93024e53c1445cb4630ee5c07926abff8943715f"
-    semparse_sha = "937d5945488a33c61d0047bd74d8106e60340bbd"
+    allennlp_sha = "8bc5da2d7d0050374c78b52adde7149425e3b52a"
+    semparse_sha = "002f97b34277356333eac7937924a3b7ad48fb24"
+    reading_comprehension_sha = "c241f324e8a5af5197808b0f6dc629f1513add54"
     install_requirements = [
-        f"allennlp @ git+ssh://git@github.com/allenai/allennlp@{allennlp_sha}#egg=allennlp",
-        f"allennlp_semparse @ git+ssh://git@github.com/allenai/allennlp-semparse@{semparse_sha}#egg=allennlp-semparse",
+        f"allennlp @ git+https://github.com/allenai/allennlp@{allennlp_sha}#egg=allennlp",
+        f"allennlp_semparse @ git+https://github.com/allenai/allennlp-semparse@{semparse_sha}#egg=allennlp-semparse",
+        f"allennlp_reading_comprehension @ git+https://github.com/allenai/allennlp-reading-comprehension@{reading_comprehension_sha}#egg=allennlp-reading-comprehension",
     ]
 
 # make pytest-runner a conditional requirement,
