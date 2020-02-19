@@ -351,3 +351,9 @@ class AllenNlpPretrainedTest(AllenNlpTestCase):
             "punct",
         ]
         assert result["predicted_heads"] == [2, 0, 2, 2, 4, 2]
+
+    def test_openie(self):
+        predictor = pretrained.open_information_extraction_stanovsky_2018()
+        result = predictor.predict_json({"sentence": "I'm against picketing, but I don't know how to show it."})
+        assert "verbs" in result
+        assert "words" in result

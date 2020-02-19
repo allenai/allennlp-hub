@@ -68,7 +68,7 @@ def naqanet_dua_2019() -> rc_predictors.ReadingComprehensionPredictor:
 
 def open_information_extraction_stanovsky_2018() -> predictors.OpenIePredictor:
     predictor = _load_predictor(
-        "https://allennlp.s3.amazonaws.com/models/openie-model.2018-08-20.tar.gz",
+        "https://allennlp.s3.amazonaws.com/models/openie-model.2020.02.10.tar.gz",
         "open-information-extraction",
     )
     return predictor
