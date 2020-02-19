@@ -16,7 +16,7 @@ def srl_with_elmo_luheng_2018() -> predictors.SemanticRoleLabelerPredictor:
     f1: 0.849
     """
     predictor = _load_predictor(
-        "https://allennlp.s3.amazonaws.com/models/srl-model-2018.05.25.tar.gz",
+        "https://allennlp.s3.amazonaws.com/models/srl-model-2020.02.10.tar.gz",
         "semantic-role-labeling",
     )
     return predictor
@@ -24,7 +24,7 @@ def srl_with_elmo_luheng_2018() -> predictors.SemanticRoleLabelerPredictor:
 
 def bert_srl_shi_2019() -> predictors.SemanticRoleLabelerPredictor:
     predictor = _load_predictor(
-        "https://s3-us-west-2.amazonaws.com/allennlp/models/bert-base-srl-2019.06.17.tar.gz",
+        "https://s3-us-west-2.amazonaws.com/allennlp/models/bert-base-srl-2020.02.10.tar.gz",
         "semantic-role-labeling",
     )
     return predictor
@@ -40,7 +40,7 @@ def bidirectional_attention_flow_seo_2017() -> rc_predictors.ReadingComprehensio
 
        $ docker run allennlp/allennlp:v0.7.0
            evaluate
-           https://allennlp.s3.amazonaws.com/models/bidaf-model-2017.09.15-charpad.tar.gz
+           https://allennlp.s3.amazonaws.com/models/bidaf-model-2020.02.10-charpad.tar.gz
            https://allennlp.s3.amazonaws.com/datasets/squad/squad-dev-v1.1.json
 
     Metrics:
@@ -52,7 +52,7 @@ def bidirectional_attention_flow_seo_2017() -> rc_predictors.ReadingComprehensio
     * f1: 0.778
     """
     predictor = _load_predictor(
-        "https://allennlp.s3.amazonaws.com/models/bidaf-model-2017.09.15-charpad.tar.gz",
+        "https://allennlp.s3.amazonaws.com/models/bidaf-model-2020.02.10-charpad.tar.gz",
         "reading-comprehension",
     )
     return predictor
@@ -60,7 +60,7 @@ def bidirectional_attention_flow_seo_2017() -> rc_predictors.ReadingComprehensio
 
 def naqanet_dua_2019() -> rc_predictors.ReadingComprehensionPredictor:
     predictor = _load_predictor(
-        "https://allennlp.s3.amazonaws.com/models/naqanet-2019.04.29-fixed-weight-names.tar.gz",
+        "https://allennlp.s3.amazonaws.com/models/naqanet-2020.02.10-fixed-weight-names.tar.gz",
         "reading-comprehension",
     )
     return predictor
@@ -84,14 +84,14 @@ def decomposable_attention_with_elmo_parikh_2017() -> predictors.DecomposableAtt
 
        $ docker run allennlp/allennlp:v0.7.0
            evaluate
-           https://allennlp.s3.amazonaws.com/models/decomposable-attention-elmo-2018.02.19.tar.gz
+           https://allennlp.s3.amazonaws.com/models/decomposable-attention-elmo-2020.02.10.tar.gz
            https://allennlp.s3.amazonaws.com/datasets/snli/snli_1.0_test.jsonl
 
     Metrics:
     accuracy: 0.864
     """
     predictor = _load_predictor(
-        "https://allennlp.s3.amazonaws.com/models/decomposable-attention-elmo-2018.02.19.tar.gz",
+        "https://allennlp.s3.amazonaws.com/models/decomposable-attention-elmo-2020.02.10.tar.gz",
         "textual-entailment",
     )
     return predictor
@@ -106,7 +106,7 @@ def neural_coreference_resolution_lee_2017() -> predictors.CorefPredictor:
     f1: 0.630
     """
     predictor = _load_predictor(
-        "https://allennlp.s3.amazonaws.com/models/coref-model-2018.02.05.tar.gz",
+        "https://allennlp.s3.amazonaws.com/models/coref-model-2020.02.10.tar.gz",
         "coreference-resolution",
     )
 
@@ -123,7 +123,7 @@ def named_entity_recognition_with_elmo_peters_2018() -> predictors.SentenceTagge
     Based on `Deep contextualized word representations <https://arxiv.org/abs/1802.05365>`_
     """
     predictor = _load_predictor(
-        "https://allennlp.s3.amazonaws.com/models/ner-model-2018.12.18.tar.gz",
+        "https://allennlp.s3.amazonaws.com/models/ner-model-2020.02.10.tar.gz",
         "sentence-tagger",
     )
 
@@ -138,7 +138,7 @@ def fine_grained_named_entity_recognition_with_elmo_peters_2018() -> predictors.
     Fine Grained Named Entity Recognition
     """
     predictor = _load_predictor(
-        "https://allennlp.s3.amazonaws.com/models/fine-grained-ner-model-elmo-2018.12.21.tar.gz",
+        "https://allennlp.s3.amazonaws.com/models/fine-grained-ner-model-elmo-2020.02.10.tar.gz",
         "sentence-tagger",
     )
 
@@ -155,7 +155,7 @@ def span_based_constituency_parsing_with_elmo_joshi_2018() -> predictors.Constit
     Based on `Minimal Span Based Constituency Parser (Stern et al, 2017) <https://www.semanticscholar.org/paper/A-Minimal-Span-Based-Neural-Constituency-Parser-Stern-Andreas/593e4e749bd2dbcaf8dc25298d830b41d435e435>`_ but with ELMo embeddings
     """
     predictor = _load_predictor(
-        "https://allennlp.s3.amazonaws.com/models/elmo-constituency-parser-2018.03.14.tar.gz",
+        "https://allennlp.s3.amazonaws.com/models/elmo-constituency-parser-2020.02.10.tar.gz",
         "constituency-parser",
     )
     return predictor
@@ -168,7 +168,7 @@ def biaffine_parser_stanford_dependencies_todzat_2017() -> predictors.BiaffineDe
     Based on `Dozat and Manning, 2017 <https://arxiv.org/pdf/1611.01734.pdf>`_
     """
     predictor = _load_predictor(
-        "https://allennlp.s3.amazonaws.com/models/biaffine-dependency-parser-ptb-2018.08.23.tar.gz",
+        "https://allennlp.s3.amazonaws.com/models/biaffine-dependency-parser-ptb-2020.02.10.tar.gz",
         "biaffine-dependency-parser",
     )
     return predictor
@@ -181,7 +181,7 @@ def biaffine_parser_universal_dependencies_todzat_2017() -> predictors.BiaffineD
     Based on `Dozat and Manning, 2017 <https://arxiv.org/pdf/1611.01734.pdf>`_
     """
     predictor = _load_predictor(
-        "https://allennlp.s3.amazonaws.com/models/biaffine-dependency-parser-ud-2018.08.23.tar.gz",
+        "https://allennlp.s3.amazonaws.com/models/biaffine-dependency-parser-ud-2020.02.10.tar.gz",
         "biaffine-dependency-parser",
     )
     return predictor
@@ -194,7 +194,7 @@ def esim_nli_with_elmo_chen_2017() -> predictors.DecomposableAttentionPredictor:
     Based on `Enhanced LSTM for Natural Language Inference <https://arxiv.org/pdf/1609.06038.pdf>`_ and uses ELMo
     """
     predictor = _load_predictor(
-        "https://allennlp.s3.amazonaws.com/models/esim-elmo-2018.05.17.tar.gz",
+        "https://allennlp.s3.amazonaws.com/models/esim-elmo-2020.02.10.tar.gz",
         "textual-entailment",
     )
     return predictor

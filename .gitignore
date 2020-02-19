@@ -1,1 +1,3 @@
 __pycache__/
+/*.iml
+/allennlp_hub.egg-info/
