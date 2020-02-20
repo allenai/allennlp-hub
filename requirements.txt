@@ -1,4 +1,4 @@
 # To be changed to released versions once allennlp-semparse unpins allennlp.
-git+https://github.com/allenai/allennlp@17c2ff1ce2cb5e84ab9a0f524e6c01362c242cae
-git+https://github.com/allenai/allennlp-semparse@b417be8a434066a7e164c80c8ef656cd5e73af41
+git+https://github.com/allenai/allennlp@65ff0d87a30e6532cb21ea5fe8b7bd436445c128
+git+https://github.com/allenai/allennlp-semparse@339e617861a7616618a503cc98e1e9c8b28a1b06
 git+https://github.com/allenai/allennlp-reading-comprehension@e4f8e5df4f9fa35287d44e94fc8b26b9cabed0a5

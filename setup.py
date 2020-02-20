@@ -39,8 +39,8 @@ if not os.environ.get("EXCLUDE_ALLENNLP_IN_SETUP"):
     # it depends on a specific allennlp SHA. Due to the aforementioned
     # setuptools bug, we explicitly set the allennlp version here to be that
     # required by allennlp-semparse.
-    allennlp_sha = "17c2ff1ce2cb5e84ab9a0f524e6c01362c242cae"
-    semparse_sha = "b417be8a434066a7e164c80c8ef656cd5e73af41"
+    allennlp_sha = "65ff0d87a30e6532cb21ea5fe8b7bd436445c128"
+    semparse_sha = "339e617861a7616618a503cc98e1e9c8b28a1b06"
     reading_comprehension_sha = "e4f8e5df4f9fa35287d44e94fc8b26b9cabed0a5"
     install_requirements = [
         f"allennlp @ git+https://github.com/allenai/allennlp@{allennlp_sha}#egg=allennlp",
